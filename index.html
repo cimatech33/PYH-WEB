@@ -613,7 +613,7 @@ main{padding-top:var(--header-h);min-height:100vh;}
 }
 .macro-card:hover{border-color:var(--primary-2);transform:translateY(-3px);box-shadow:var(--shadow-sm);}
 .macro-card.active{border-color:var(--amber);box-shadow:var(--shadow-md);}
-.macro-loop{position:relative;height:250px;overflow:hidden;}
+.macro-loop{position:relative;aspect-ratio:4/3;overflow:hidden;}
 .macro-loop img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1s ease;}
 .macro-loop img.on{opacity:1;}
 .macro-card h4{padding:16px 18px 4px;font-size:1.05rem;color:var(--primary);text-transform:uppercase;}
@@ -799,7 +799,7 @@ main{padding-top:var(--header-h);min-height:100vh;}
 @media(max-width:860px){.team-grid{grid-template-columns:minmax(0,1fr);}}
 .team-card{border-radius:10px;overflow:hidden;box-shadow:var(--shadow-sm);background:var(--white);transition:all .3s;}
 .team-card:hover{box-shadow:var(--shadow-md);transform:translateY(-4px);}
-.team-card .ph{height:220px;overflow:hidden;}
+.team-card .ph{aspect-ratio:4/3;overflow:hidden;position:relative;}
 .team-card .ph img{width:100%;height:100%;object-fit:cover;transition:.5s;}
 .team-card:hover .ph img{transform:scale(1.06);}
 .team-card .cap{padding:16px 18px;}
@@ -913,14 +913,14 @@ main{padding-top:var(--header-h);min-height:100vh;}
 .lightbox-prev{left:26px;}
 .lightbox-next{right:26px;}
 @media(max-width:640px){.lightbox-nav{width:44px;height:44px;}.lightbox-prev{left:10px;}.lightbox-next{right:10px;}.lightbox-close{top:14px;right:16px;}}
-.detail-gallery picture,.detail-gallery img{border-radius:10px;overflow:hidden;box-shadow:var(--shadow-sm);height:200px;width:100%;object-fit:cover;display:block;}
+.detail-gallery picture,.detail-gallery img{border-radius:10px;overflow:hidden;box-shadow:var(--shadow-sm);aspect-ratio:4/3;width:100%;object-fit:cover;display:block;}
 .svc-card{
   background:var(--white);border-radius:12px;overflow:hidden;box-shadow:var(--shadow-sm);
   transition:all .4s var(--ease);
   display:flex;flex-direction:column;
 }
 .svc-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg);}
-.svc-card .ph{height:170px;overflow:hidden;position:relative;}
+.svc-card .ph{aspect-ratio:4/3;overflow:hidden;position:relative;}
 .svc-card .ph .card-loop{position:absolute;inset:0;}
 .svc-card .ph .card-loop img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .9s ease;}
 .svc-card .ph .card-loop img.on{opacity:1;}
