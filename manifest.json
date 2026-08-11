@@ -1,0 +1,14 @@
+{
+  "name": "P&H Company Services",
+  "short_name": "P&H Company",
+  "description": "Overhaul y mantenimiento de equipos rotativos multimarca — Industry, Mining, Oil & Gas.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#0c1856",
+  "theme_color": "#0c1856",
+  "lang": "es",
+  "icons": [
+    { "src": "images/pwa-icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "images/pwa-icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
