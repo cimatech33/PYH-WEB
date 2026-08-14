@@ -184,6 +184,7 @@ button{font:inherit;cursor:pointer;background:none;border:none;color:inherit;}
 .wrap{max-width:1240px;margin:0 auto;padding:0 28px;}
 @media(min-width:1600px){.wrap{max-width:1440px;}}
 @media(max-width:640px){.wrap{padding:0 20px;}}
+@media(max-width:380px){.wrap{padding:0 16px;}.fb-content{padding-left:16px;padding-right:16px;}}
 
 /* blueprint grid — pintado directamente en el fondo del body (fijo, estático, detrás de todo) */
 body{
@@ -533,7 +534,8 @@ main{padding-top:var(--header-h);min-height:100vh;}
   background:linear-gradient(0deg,rgba(10,15,40,.92) 10%,rgba(27,47,131,.55) 45%,rgba(57,115,189,.25) 75%,rgba(57,115,189,.10) 100%);
   display:flex;align-items:flex-end;justify-content:space-between;
 }
-.fb-content{padding-bottom:80px;padding-left:clamp(24px,5vw,80px);max-width:620px;color:#fff;}
+.fb-content{padding-bottom:80px;padding-left:clamp(24px,5vw,80px);max-width:760px;color:#fff;}
+.fb-content .plate{font-size:.92rem;padding:10px 22px 10px 20px;}
 .fb-content .plate{background:linear-gradient(155deg,#24408f,#0e1c52);}
 .fb-title{font-size:clamp(2.3rem,5vw,3.8rem);text-transform:uppercase;margin-bottom:16px;font-weight:700;line-height:1.1;}
 .fb-content p{color:#dde5f5;font-size:1.08rem;margin-bottom:26px;max-width:560px;text-align:justify;}
@@ -553,7 +555,7 @@ main{padding-top:var(--header-h);min-height:100vh;}
 .fb-dot::before{content:'';position:absolute;top:-16px;bottom:-16px;left:0;right:0;}
 .fb-dot:hover{background:rgba(255,255,255,.7);}
 .fb-dot.active{background:var(--amber);}
-@media(max-width:640px){.fb-slider{height:82vh;}.fb-content{padding-bottom:50px;padding-left:22px;}.fb-dots{right:20px;bottom:20px;}}
+@media(max-width:640px){.fb-slider{height:82vh;}.fb-content{padding-bottom:50px;padding-left:22px;padding-right:22px;max-width:100%;}.fb-content p{text-align:left;}.fb-dots{right:20px;bottom:20px;}}
 
 #page-inicio{padding-top:0;}
 
@@ -646,7 +648,7 @@ main{padding-top:var(--header-h);min-height:100vh;}
 }
 .svc-btn:hover{border-color:var(--primary-2);color:var(--primary);transform:translateX(4px);box-shadow:var(--shadow-sm);}
 .svc-btn.active{background:var(--primary);border-color:var(--primary);color:#fff;font-weight:600;transform:translateX(4px);box-shadow:var(--shadow-md);}
-.svc-carousel{position:relative;height:100%;min-height:460px;border-radius:14px;overflow:hidden;box-shadow:var(--shadow-md);}
+.svc-carousel{position:relative;height:100%;min-height:460px;border-radius:14px;overflow:hidden;box-shadow:var(--shadow-md);cursor:zoom-in;}
 .svc-carousel img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .7s var(--ease);}
 .svc-carousel img.on{opacity:1;}
 .svc-carousel-cap{
@@ -796,6 +798,7 @@ main{padding-top:var(--header-h);min-height:100vh;}
 .about-photos .tall{grid-row:span 2;}
 
 .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+.team-grid .ph{cursor:zoom-in;}
 @media(max-width:860px){.team-grid{grid-template-columns:minmax(0,1fr);}}
 .team-card{border-radius:10px;overflow:hidden;box-shadow:var(--shadow-sm);background:var(--white);transition:all .3s;}
 .team-card:hover{box-shadow:var(--shadow-md);transform:translateY(-4px);}
@@ -846,7 +849,7 @@ main{padding-top:var(--header-h);min-height:100vh;}
 /* ---------- INSTAGRAM SHOWCASE (ilustrativo) ---------- */
 .ig-showcase{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;}
 @media(max-width:760px){.ig-showcase{grid-template-columns:repeat(3,1fr);}}
-.ig-tile{position:relative;aspect-ratio:1/1;border-radius:8px;overflow:hidden;}
+.ig-tile{position:relative;aspect-ratio:1/1;border-radius:8px;overflow:hidden;cursor:zoom-in;}
 .ig-tile img{width:100%;height:100%;object-fit:cover;transition:.4s;}
 .ig-tile:hover img{transform:scale(1.08);}
 .ig-tile span{position:absolute;inset:0;background:rgba(10,15,40,.35);display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.3rem;opacity:0;transition:.3s;}
@@ -886,6 +889,8 @@ main{padding-top:var(--header-h);min-height:100vh;}
 .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
 @media(max-width:980px){.svc-grid{grid-template-columns:1fr 1fr;}}
 @media(max-width:640px){.svc-grid{grid-template-columns:minmax(0,1fr);}}
+.svc-grid.cols-2{grid-template-columns:repeat(2,1fr);max-width:780px;margin-inline:auto;}
+@media(max-width:640px){.svc-grid.cols-2{grid-template-columns:minmax(0,1fr);}}
 .detail-sub{margin-bottom:50px;padding-bottom:44px;border-bottom:1px solid var(--line);}
 .detail-sub:last-of-type{border-bottom:none;}
 .detail-sub h3{font-size:1.3rem;color:var(--primary);text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:10px;}
@@ -971,7 +976,7 @@ main{padding-top:var(--header-h);min-height:100vh;}
 .client-tile{
   background:#ffffff;border:1px solid var(--line);border-radius:10px;
   display:flex;align-items:center;justify-content:center;height:112px;padding:20px;
-  transition:all .3s var(--ease);
+  transition:all .3s var(--ease);cursor:zoom-in;
 }
 .client-tile:hover{border-color:var(--primary);box-shadow:var(--shadow-md);transform:translateY(-3px);}
 .client-tile img{max-height:60px;max-width:100%;opacity:.96;transition:.3s;}
@@ -1226,7 +1231,7 @@ input[type="text"]:focus,input[type="email"]:focus,input[type="tel"]:focus,input
             <div class="mega-left"><div class="plate"><i class="fa-solid fa-comments"></i> Contacto</div><h4 style="font-size:1.6rem;color:var(--primary);text-transform:uppercase;">Hablemos de su próximo overhaul</h4><p>Cuéntenos la marca, el modelo y la aplicación — le respondemos con un alcance técnico y cotización.</p></div>
             <div class="mega-links" style="grid-template-columns:repeat(2,minmax(0,1fr));">
               <a class="mega-link" data-nav="equipo"><i class="fa-solid fa-handshake"></i><h6>Trabaje con nosotros</h6><span>Regístrese como aliado</span></a>
-              <a class="mega-link" href="http://api.whatsapp.com/send?phone=573203685592" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i><h6>WhatsApp</h6><span>Respuesta inmediata</span></a>
+              <a class="mega-link" href="http://api.whatsapp.com/send?phone=573138002527" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i><h6>WhatsApp</h6><span>Respuesta inmediata</span></a>
               <div class="mega-link" style="grid-column:1/-1;cursor:default;">
                 <h6 style="margin-bottom:8px;"><i class="fa-regular fa-envelope"></i>&nbsp; Reciba novedades técnicas</h6>
                 <form class="mega-mini-form" onsubmit="handleMegaSubscribe(event)" style="flex-direction:row;">
@@ -1271,7 +1276,7 @@ input[type="text"]:focus,input[type="email"]:focus,input[type="tel"]:focus,input
           <div class="util-dropdown">
             <div class="support-status" id="supportStatus"><span class="dot" id="supportDot"></span><span id="supportStatusText">Verificando horario…</span></div>
             <a href="mailto:ventas2@pyhcompany.com"><i class="fa-regular fa-envelope"></i> ventas2@pyhcompany.com</a>
-            <a href="http://api.whatsapp.com/send?phone=573203685592" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp directo</a>
+            <a href="http://api.whatsapp.com/send?phone=573138002527" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp directo</a>
             <a data-nav="contacto"><i class="fa-solid fa-comments"></i> Ir a Contacto</a>
           </div>
         </div>
@@ -1313,7 +1318,7 @@ input[type="text"]:focus,input[type="email"]:focus,input[type="tel"]:focus,input
   </div>
   <div class="fb-panel">
     <picture><source type="image/webp" media="(max-width:640px)" srcset="images/pyh-company-home-planta-fisica-propia-ph-company-sm.webp"><source type="image/webp" srcset="images/pyh-company-home-planta-fisica-propia-ph-company-lg.webp"><source media="(max-width:640px)" srcset="images/pyh-company-home-planta-fisica-propia-ph-company-sm.jpg"><img src="images/pyh-company-home-planta-fisica-propia-ph-company-lg.jpg" class="fb-bg" alt="Planta física propia P&H Company Services" loading="lazy" decoding="async"></picture>
-    <div class="fb-overlay"><div class="fb-content"><div class="plate"><i class="fa-solid fa-industry"></i> Nuestra fortaleza</div><h2 class="fb-title">Infraestructura <mark class="hl">propia</mark> de 1.200 m²</h2><p>Dos plantas de mecanizado, banco de balanceo dinámico y un departamento QAQC dedicado — todo bajo un mismo techo en Bogotá.</p><div class="fb-actions"><button class="btn btn-amber" data-nav="nosotros" data-anchor="infra-hero">Conoce más</button><button class="btn btn-ghost" data-nav="contacto">Solicitar presupuesto</button></div></div></div>
+    <div class="fb-overlay"><div class="fb-content"><div class="plate"><i class="fa-solid fa-industry"></i> Centro de Servicios QRC</div><h2 class="fb-title">Infraestructura <mark class="hl">propia</mark> de 1.200 m²</h2><p>Dos plantas de mecanizado, banco de balanceo dinámico y un departamento QAQC dedicado — todo bajo un mismo techo en Bogotá.</p><div class="fb-actions"><button class="btn btn-amber" data-nav="nosotros" data-anchor="infra-hero">Conoce más</button><button class="btn btn-ghost" data-nav="contacto">Solicitar presupuesto</button></div></div></div>
   </div>
   <div class="fb-dots" id="fbDots"><span class="fb-dot active" data-slide="0"></span><span class="fb-dot" data-slide="1"></span><span class="fb-dot" data-slide="2"></span><span class="fb-dot" data-slide="3"></span></div>
   </div>
@@ -1648,7 +1653,7 @@ input[type="text"]:focus,input[type="email"]:focus,input[type="tel"]:focus,input
 
       <!-- ============ 1. MANTENIMIENTO, REPARACIÓN Y OVERHAUL DE EQUIPOS ROTATIVOS ============ -->
       <div class="section-head" id="servicios-rotativos"><div class="plate" data-nav="servicio-rotativos" style="cursor:pointer;"><i class="fa-solid fa-gauge-high"></i> 1. Mantenimiento, Reparación y Overhaul de Equipos Rotativos <i class="fa-solid fa-arrow-right"></i></div><h3 style="font-size:1.5rem;color:var(--primary);text-transform:uppercase;margin-bottom:8px;">Servicio técnico multimarca</h3></div>
-      <div class="svc-grid" id="servicios-grid">
+      <div class="svc-grid cols-2" id="servicios-grid">
         <div class="svc-card"><div class="ph" data-nav="servicio-rotativos" style="cursor:pointer;"><div class="card-loop"><img class="on" src="images/pyh-company-bombas-centrifugas-01.webp" alt="PYH Company - Bombas centrífugas" loading="lazy" decoding="async"><img src="images/pyh-company-bombas-centrifugas-02.webp" alt="PYH Company - Bombas centrífugas" loading="lazy" decoding="async"><img src="images/pyh-company-bombas-centrifugas-03.webp" alt="PYH Company - Bombas centrífugas" loading="lazy" decoding="async"><img src="images/pyh-company-bombas-centrifugas-04.webp" alt="PYH Company - Bombas centrífugas" loading="lazy" decoding="async"></div><span class="ico"><i class="fa-solid fa-water"></i></span></div><div class="body"><h4>1.1 Bombas Centrífugas</h4><ul class="fab-list" style="margin-top:6px;"><li><i class="fa-solid fa-check"></i> Centrífugas (API, OH, BB, multietapas, sumergibles, contraincendios)</li></ul><div class="brand-tags"><span>Servicio multimarca</span></div></div></div>
 
         <div class="svc-card"><div class="ph" data-nav="servicio-rotativos" style="cursor:pointer;"><div class="card-loop"><img class="on" src="images/pyh-company-cavidades-progresivas-01.webp" alt="PYH Company - Cavidades progresivas" loading="lazy" decoding="async"><img src="images/pyh-company-cavidades-progresivas-02.webp" alt="PYH Company - Cavidades progresivas" loading="lazy" decoding="async"><img src="images/pyh-company-cavidades-progresivas-03.webp" alt="PYH Company - Cavidades progresivas" loading="lazy" decoding="async"><img src="images/pyh-company-cavidades-progresivas-04.webp" alt="PYH Company - Cavidades progresivas" loading="lazy" decoding="async"></div><span class="ico"><i class="fa-solid fa-arrows-rotate"></i></span></div><div class="body"><h4>1.2 Cavidades Progresivas</h4><ul class="fab-list" style="margin-top:6px;"><li><i class="fa-solid fa-check"></i> Desplazamiento positivo (cavidades progresivas, tornillo, multimarcas)</li></ul><div class="brand-tags"><span>Servicio multimarca</span></div></div></div>
@@ -1662,7 +1667,7 @@ input[type="text"]:focus,input[type="email"]:focus,input[type="tel"]:focus,input
 
       <!-- ============ 2. SERVICIOS EQUIPOS DE PERFORACIÓN — EQUIPOS DE FONDO Y SUPERFICIE ============ -->
       <div class="section-head" id="servicios-perforacion"><div class="plate" data-nav="servicio-perforacion" style="cursor:pointer;"><i class="fa-solid fa-oil-well"></i> 2. Servicios equipos de Perforación — Equipos de Fondo y Superficie <i class="fa-solid fa-arrow-right"></i></div><h3 style="font-size:1.5rem;color:var(--primary);text-transform:uppercase;margin-bottom:8px;">Especialidad para el sector de perforación</h3></div>
-      <div class="svc-grid">
+      <div class="svc-grid cols-2">
         <div class="svc-card"><div class="ph" data-nav="servicio-perforacion" style="cursor:pointer;"><picture><source type="image/webp" srcset="images/pyh-company-det-perforacion-componentes-de-superficie-perforacion.webp"><img src="images/pyh-company-det-perforacion-componentes-de-superficie-perforacion.jpg" alt="PYH Company - Componentes de Superficie Perforación" loading="lazy" decoding="async"></picture><span class="ico"><i class="fa-solid fa-screwdriver-wrench"></i></span></div><div class="body"><h4>2.1 Componentes de Superficie</h4><ul class="fab-list" style="margin-top:6px;"><li><i class="fa-solid fa-check"></i> Mesas rotarias y cajas angulares</li><li><i class="fa-solid fa-check"></i> Quijadas de llaves (ST80)</li></ul><div class="brand-tags"><span>Servicio multimarca</span></div></div></div>
 
         <div class="svc-card"><div class="ph" data-nav="servicio-perforacion" style="cursor:pointer;"><picture><source type="image/webp" srcset="images/pyh-company-det-perforacion-preventoras-y-sistemas-de-seguridad.webp"><img src="images/pyh-company-det-perforacion-preventoras-y-sistemas-de-seguridad.jpg" alt="PYH Company - Componentes de Fondo y Seguridad" loading="lazy" decoding="async"></picture><span class="ico"><i class="fa-solid fa-shield-halved"></i></span></div><div class="body"><h4>2.2 Componentes de Fondo y Seguridad</h4><ul class="fab-list" style="margin-top:6px;"><li><i class="fa-solid fa-check"></i> Preventoras (BOP)</li><li><i class="fa-solid fa-check"></i> Coronas de bloque viajero</li><li><i class="fa-solid fa-check"></i> Sistemas de izaje y transmisión</li></ul><div class="brand-tags"><span>Servicio multimarca</span></div></div></div>
@@ -1672,7 +1677,7 @@ input[type="text"]:focus,input[type="email"]:focus,input[type="tel"]:focus,input
 
       <!-- ============ 3. INGENIERÍA, MONTAJE, REPUESTOS Y FABRICACIÓN ============ -->
       <div class="section-head" id="servicios-ingenieria"><div class="plate" data-nav="servicio-ingenieria" style="cursor:pointer;"><i class="fa-solid fa-drafting-compass"></i> 3. Ingeniería, Montaje, Repuestos y Fabricación <i class="fa-solid fa-arrow-right"></i></div><h3 style="font-size:1.5rem;color:var(--primary);text-transform:uppercase;margin-bottom:8px;">Servicios complementarios e integrales para su planta</h3></div>
-      <div class="svc-grid">
+      <div class="svc-grid cols-2">
         <div class="svc-card"><div class="ph" data-nav="servicio-ingenieria" style="cursor:pointer;"><div class="card-loop"><img class="on" src="images/pyh-company-suministro-repuestos-01.webp" alt="PYH Company - Suministro de Repuestos" loading="lazy" decoding="async"><img src="images/pyh-company-suministro-repuestos-02.webp" alt="PYH Company - Suministro de Repuestos" loading="lazy" decoding="async"><img src="images/pyh-company-suministro-repuestos-03.webp" alt="PYH Company - Suministro de Repuestos" loading="lazy" decoding="async"><img src="images/pyh-company-suministro-repuestos-04.webp" alt="PYH Company - Suministro de Repuestos" loading="lazy" decoding="async"></div><span class="ico"><i class="fa-solid fa-boxes-packing"></i></span></div><div class="body"><h4>3.1 Suministro de Repuestos</h4><ul class="fab-list" style="margin-top:6px;"><li><i class="fa-solid fa-check"></i> Repuestos OEM (originales)</li><li><i class="fa-solid fa-check"></i> Fabricación nacional certificada (ISO, API, ANSI)</li></ul></div></div>
 
         <div class="svc-card"><div class="ph" data-nav="servicio-ingenieria" style="cursor:pointer;"><div class="card-loop"><img class="on" src="images/pyh-company-ingenieria-inversa-3d-01.webp" alt="PYH Company - Ingeniería Inversa y Digitalización 3D" loading="lazy" decoding="async"><img src="images/pyh-company-ingenieria-inversa-3d-02.webp" alt="PYH Company - Ingeniería Inversa y Digitalización 3D" loading="lazy" decoding="async"><img src="images/pyh-company-ingenieria-inversa-3d-03.webp" alt="PYH Company - Ingeniería Inversa y Digitalización 3D" loading="lazy" decoding="async"><img src="images/pyh-company-ingenieria-inversa-3d-04.webp" alt="PYH Company - Ingeniería Inversa y Digitalización 3D" loading="lazy" decoding="async"></div><span class="ico"><i class="fa-solid fa-compass-drafting"></i></span></div><div class="body"><h4>3.2 Ingeniería Inversa y Digitalización 3D</h4><ul class="fab-list" style="margin-top:6px;"><li><i class="fa-solid fa-check"></i> Escaneo 3D y modelado CAD</li><li><i class="fa-solid fa-check"></i> Generación de planos y fabricación de componentes críticos (impulsores, ejes, difusores, anillos de desgaste)</li></ul></div></div>
@@ -2010,7 +2015,7 @@ input[type="text"]:focus,input[type="email"]:focus,input[type="tel"]:focus,input
           <div class="line"><i class="fa-brands fa-whatsapp"></i> WhatsApp (57) 320 368 5592</div>
           <div class="line"><i class="fa-solid fa-globe"></i> www.pyhcompany.com</div>
           <div class="line"><i class="fa-solid fa-clock"></i> Lunes a viernes · 7:00 a.m. – 5:00 p.m.</div>
-          <a class="btn btn-amber" style="margin-top:22px;width:100%;justify-content:center;" href="http://api.whatsapp.com/send?phone=573203685592" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> Escribir por WhatsApp</a>
+          <a class="btn btn-amber" style="margin-top:22px;width:100%;justify-content:center;" href="http://api.whatsapp.com/send?phone=573138002527" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> Escribir por WhatsApp</a>
         </div>
       </div>
     </div>
@@ -2092,7 +2097,7 @@ input[type="text"]:focus,input[type="email"]:focus,input[type="tel"]:focus,input
   </div>
 </footer>
 
-<a class="wa-float" id="waFloat" href="http://api.whatsapp.com/send?phone=573203685592&text=Buen%20d%C3%ADa" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+<a class="wa-float" id="waFloat" href="http://api.whatsapp.com/send?phone=573138002527&text=Buen%20d%C3%ADa" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
 <button id="backToTop" aria-label="Volver arriba"><i class="fa-solid fa-arrow-up"></i></button>
 
 <script>
@@ -2465,6 +2470,7 @@ function renderBlogPost(postId){
   }
   function renderCarousel(sub){
     carousel.innerHTML="";
+    carousel.dataset.subKey=sub.key;
     sub.imgs.forEach(function(imgKey,i){var im=document.createElement("img");im.src=IMG[imgKey]||"";im.alt="PYH Company - "+sub.label;if(i===0)im.className="on";carousel.appendChild(im);});
     var cap=document.createElement("div");cap.className="svc-carousel-cap";cap.textContent=sub.label;carousel.appendChild(cap);
     frameIdx=0;restartCycle();
@@ -2475,6 +2481,31 @@ function renderBlogPost(postId){
     carouselPaused=!carouselPaused;
     pauseBtn.innerHTML=carouselPaused?'<i class="fa-solid fa-play"></i>':'<i class="fa-solid fa-pause"></i>';
     restartCycle();
+  });
+  var FULL_GALLERY={
+    bombascentrifugas:{slug:"bombas-centrifugas",label:"Bombas Centrífugas",total:14},
+    cavidadesprogresivas:{slug:"cavidades-progresivas",label:"Cavidades Progresivas",total:5},
+    reductores:{slug:"reductores-variadores-incrementadores",label:"Reductores, Variadores e Incrementadores",total:7},
+    reciprocantes:{slug:"reciprocantes",label:"Reciprocantes",total:4},
+    repuestos:{slug:"suministro-repuestos",label:"Suministro de Repuestos",total:10},
+    inversa3d:{slug:"ingenieria-inversa-3d",label:"Ingeniería Inversa y Digitalización 3D",total:4}
+  };
+  carousel.addEventListener("click",function(e){
+    if(e.target.closest(".svc-carousel-controls"))return;
+    if(!window.__openLightbox)return;
+    var key=carousel.dataset.subKey,full=FULL_GALLERY[key];
+    if(full){
+      var group=[];
+      for(var i=1;i<=full.total;i++){
+        var im=document.createElement("img");
+        im.src="images/pyh-company-"+full.slug+"-"+(i<10?"0"+i:i)+".webp";
+        im.alt="PYH Company - "+full.label+" "+(i<10?"0"+i:i);
+        group.push(im);
+      }
+      window.__openLightbox(group,frameIdx);
+    }else{
+      window.__openLightbox(Array.prototype.slice.call(carousel.querySelectorAll("img")),frameIdx);
+    }
   });
   function renderMacro(macroKey){
     var macro=MACROS[macroKey];
@@ -2630,7 +2661,7 @@ if("serviceWorker" in navigator){
     var active=document.querySelector(".page.active");
     var page=active?active.getAttribute("data-page"):"inicio";
     var msg=waMsgs[page]||waMsgs["inicio"];
-    wa.href="http://api.whatsapp.com/send?phone=573203685592&text="+encodeURIComponent(msg);
+    wa.href="http://api.whatsapp.com/send?phone=573138002527&text="+encodeURIComponent(msg);
   }
   var origNav=window.__navigate;
   if(origNav){window.__navigate=function(n,a,d){var r=origNav(n,a,d);setTimeout(updateWA,50);return r;};}
@@ -2688,14 +2719,14 @@ if("serviceWorker" in navigator){
     lbImg.src=imgUrl(currentGroup[currentIdx]);
     lbImg.alt=currentGroup[currentIdx].alt;
   }
+  var LIGHTBOX_CONTAINERS=".detail-gallery,.team-grid,.client-grid,.ig-showcase";
   document.addEventListener("click",function(e){
-    var pic=e.target.closest(".detail-gallery picture");
-    if(!pic)return;
-    var clickedImg=pic.querySelector("img");
-    if(!clickedImg)return;
-    var gallery=pic.closest(".detail-gallery");
-    var group=Array.prototype.filter.call(gallery.querySelectorAll("picture"),function(p){return p.querySelector("img");}).map(function(p){return p.querySelector("img");});
-    openAt(group,group.indexOf(clickedImg));
+    var img=e.target.closest(LIGHTBOX_CONTAINERS+" img");
+    if(!img)return;
+    var container=img.closest(LIGHTBOX_CONTAINERS);
+    if(!container)return;
+    var group=Array.prototype.slice.call(container.querySelectorAll("img"));
+    openAt(group,group.indexOf(img));
   });
   lb.querySelector(".lightbox-close").addEventListener("click",function(){lb.classList.remove("open");});
   lb.querySelector(".lightbox-prev").addEventListener("click",function(){step(-1);});
